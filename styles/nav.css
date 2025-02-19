@@ -31,6 +31,7 @@ nav {
     position: absolute;
     top: -0.5rem;
     right: -0.5rem;
+    margin-inline: auto;
 
     background-color: var(--snitap-sun);
 
