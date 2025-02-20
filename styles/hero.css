@@ -4,6 +4,11 @@ section.hero {
   padding: 2.5rem 2rem;
   margin-inline: auto;
 
+  display: flex; /* somente para a animação do partins ficar ao lado */
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden; /* para não ver oq está fora da div da elipse */
+
   & h1 {
     max-width: 40rem;
   }
@@ -32,7 +37,7 @@ section.hero {
   & h1 span {
       display: block;
 
-      animation: slideUp 6s infinite ease
+      animation: slideUp 6s 2s infinite ease
   }
   
   /* buttons */
@@ -49,7 +54,7 @@ section.hero {
       
       border-radius: 5rem;
 
-      transition: scale 350ms;
+      transition: scale 350ms; /* Para deixar a transição dos buttons suave */
 
       &.buy { /* sem espaço nesse nesting css pois faz parte da classe button */
         padding: 1.5rem 3rem;
@@ -78,6 +83,74 @@ section.hero {
     }
   }
 
+  /* patins */
+  & > div:nth-child(2) {
+    display: block;
+    width: 100%;
+    max-width: 30.5rem;
+    height: 30.5rem;
+
+    & .content {
+      width: 100%; /* para o conteúdo respeitar a div do patins de 30.5rem*/
+      height: 100%;
+      position: relative;
+    }
+
+    & img {
+      position: absolute;
+      width: 100%;
+    }
+
+    & img[src*="Ellipse"] {
+      width: 94%;
+      top: 3%;
+      left: 3%;
+
+      transform: translateX(200%);
+      animation: slideIn 3s 200ms ease forwards;
+    }
+
+    & img[src*="patins"] {
+      z-index: 1; /* para ficar na primeira camada das coisas */
+      transform: translateX(200%);
+      animation: slideIn 3s ease forwards;
+    }
+
+    & img[src*="stars-1"] {
+      max-width: 5.5rem;
+      top: 30%;
+      z-index: 0;
+
+      opacity: 0;
+      transform: translateX(400%);
+      animation: slideIn 2s 800ms ease both, appear 100ms 800ms both;
+    }
+
+    & img[src*="stars-2"] {
+      max-width: 2.5rem;
+      right: 0;
+      bottom: 35%;
+
+      transform: translateX(400%);
+      animation: slideIn 2.2s 800ms ease both;
+    }
+  }
+}
+
+@keyframes slideIn { /* animação patins */
+  50% {
+    transform: translateX(-20px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
@@ -150,7 +223,4 @@ section.hero {
   100% {
     transform: translateY(-15rem);
   }
-} 
-
-  
-  
+}
