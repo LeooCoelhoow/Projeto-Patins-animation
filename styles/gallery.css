@@ -1,0 +1,10 @@
+section.gallery {
+  width: 100%;
+  max-width: 80rem;
+  padding: 2.5rem 2.5rem;
+  margin-inline: auto;
+
+  & header {
+    text-align: center;
+  }
+}
