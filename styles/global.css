@@ -28,9 +28,10 @@ html, button {
   font: 500 1rem/1.5 var(--ff-base);
 }
 
-/* html {
-  zoom: 0.5;  Só pra visualizar melhor o conteúdo na page durante o desenvolvimento
-} */
+html {
+  zoom: 0.5;  
+  /* Só pra visualizar melhor o conteúdo na page durante o desenvolvimento */
+}
 
 h1, h2 {
   font-family:'Syne', sans-serif;
