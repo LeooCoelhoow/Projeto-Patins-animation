@@ -27,6 +27,16 @@ section.gallery {
     gap: 2.5rem;
   }
 
+  @media (width < 80em) {
+    .content {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+  
+      gap: 1.5rem;
+    }
+  }
+
   & figure {
     position: relative;
     border-radius: 2.5rem;
